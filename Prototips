@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduGame - Gamified Learning</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>EduGame</h1>
+            <div class="user-profile">
+                <span id="username">Student</span>
+                <div class="avatar" id="avatar">👨‍🎓</div>
+            </div>
+        </header>
+
+        <!-- XP Progress Bar -->
+        <div class="progress-container">
+            <h3>Level <span id="level">1</span></h3>
+            <div class="progress-bar">
+                <div class="progress" id="progress">50%</div>
+            </div>
+            <p><span id="xp">250</span>/500 XP</p>
+        </div>
+
+        <!-- Badges Section -->
+        <div class="badges">
+            <h2>Your Badges</h2>
+            <div class="badge-list">
+                <div class="badge">⭐ Math Star</div>
+                <div class="badge">🏆 Fast Learner</div>
+                <div class="badge locked">🔒 Science Wizard</div>
+            </div>
+        </div>
+
+        <!-- Challenges -->
+        <div class="challenges">
+            <h2>Today's Challenges</h2>
+            <div class="challenge-card" onclick="startChallenge('math')">
+                <h3>Math Quiz</h3>
+                <p>Solve 5 equations → +50 XP</p>
+            </div>
+            <div class="challenge-card" onclick="startChallenge('science')">
+                <h3>Science Trivia</h3>
+                <p>Answer 3 questions → +30 XP</p>
+            </div>
+        </div>
+
+        <!-- Shop Button -->
+        <button class="shop-btn" onclick="openShop()">🛒 Customize Avatar</button>
+    </div>
+
+    <!-- Challenge Popup -->
+    <div class="popup" id="challengePopup">
+        <div class="popup-content">
+            <h2 id="challengeTitle">Math Quiz</h2>
+            <p id="challengeQuestion">What is 7 × 8?</p>
+            <input type="text" id="answerInput" placeholder="Your answer...">
+            <button onclick="checkAnswer()">Submit</button>
+            <p id="feedback"></p>
+        </div>
+    </div>
+
+    <!-- Shop Popup -->
+    <div class="popup" id="shopPopup">
+        <div class="popup-content">
+            <h2>Avatar Shop</h2>
+            <p>Coins: <span id="coins">100</span> 🪙</p>
+            <div class="shop-items">
+                <div class="item" onclick="buyItem('👨‍🚀 Astronaut', 50)">
+                    👨‍🚀 Astronaut (50 coins)
+                </div>
+                <div class="item" onclick="buyItem('🧙‍♂️ Wizard', 80)">
+                    🧙‍♂️ Wizard (80 coins)
+                </div>
+                <div class="item" onclick="buyItem('🦸‍♂️ Superhero', 120)">
+                    🦸‍♂️ Superhero (120 coins)
+                </div>
+            </div>
+            <button onclick="closeShop()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
