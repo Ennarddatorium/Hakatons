@@ -1,2 +1,2 @@
 # Hakatons
-html saite prototips
+Saglabāt kā html failu un pēc tam to atvērt
